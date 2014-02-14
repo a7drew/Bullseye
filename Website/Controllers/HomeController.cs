@@ -14,9 +14,11 @@ namespace Website.Controllers
 
         [HttpPost]
         [AllowCrossSiteJson]
-        public void Edit(string id, FormCollection collection)
+        public string Edit(int id, FormCollection collection)
         {
-            _jsessionId = id;
+            _jsessionId = collection["JSESSIONID"];
+
+            return _jsessionId;
         }
     }
 
